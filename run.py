@@ -26,6 +26,7 @@ for i in videos_list:
 
     cmd = os.system('youtube-upload --file={file_output} --title={video_title} --category="22" --privacyStatus="private"'.format(file_output=file_input, video_title=video_title))
 
+    os.system('rm -rf {} {}'.format(file_input,file_output))
     exit_code = os.WEXITSTATUS(cmd)
     if int(exit_code) != 0:
         exit(1)
