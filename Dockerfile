@@ -18,5 +18,3 @@ RUN pip3 install youtube-dl google-api-python-client google-auth-oauthlib google
 COPY youtube-upload /usr/local/bin/youtube-upload
 
 COPY --from=aria2 /usr/local/bin/aria2c /usr/local/bin/aria2c
-
-COPY secrets /secrets
