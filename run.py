@@ -24,7 +24,7 @@ for i in videos_list:
     os.system('aria2c -k 1M -s 128 -x 128 -o "..{output}" "{url}"'.format(url=file_video_link, output=file_input))
     os.system('ffmpeg -i {file_input} -crf 15 -vf scale=1920x1080:flags=lanczos -aspect 16:9 {file_output}'.format(file_input=file_input, file_output=file_output))
 
-    cmd = os.system('youtube-upload --file={file_output} --title={video_title} --category="22" --privacyStatus="private"'.format(file_output=file_input, video_title=video_title))
+    cmd = os.system('youtube-upload --file="{file_output}" --title="{video_title}" --category="22" --privacyStatus="private"'.format(file_output=file_input, video_title=video_title))
 
     os.system('rm -rf {} {}'.format(file_input,file_output))
     exit_code = os.WEXITSTATUS(cmd)
