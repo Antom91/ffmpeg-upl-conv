@@ -15,7 +15,7 @@ from oauth2client.tools import argparser, run_flow
 
 httplib2.RETRIES = 1
 SECRETS_FOLDER = os.path.join('/','secrets')
-MAX_RETRIES = 10
+MAX_RETRIES = 100
 RETRIABLE_EXCEPTIONS = (httplib2.HttpLib2Error, IOError)
 RETRIABLE_STATUS_CODES = [500, 502, 503, 504]
 CLIENT_SECRETS_FILE = os.path.join(SECRETS_FOLDER, "client_secrets.json")
