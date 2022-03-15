@@ -22,6 +22,8 @@ print()
 print(PLAYLIST)
 print()
 print()
+
+PLAYLIST = PLAYLIST.split(',')
 for i in PLAYLIST:
     # os.system('')
     file_input = os.path.join(TMP_DIR, i+VIDEO_FILE_EXTENSION)
