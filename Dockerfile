@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir \
     youtube-dl \
     google-api-python-client \
     google-auth-oauthlib \
-    google-auth-httplib2
+    google-auth-httplib2 \
     oauth2client \
     retrying
 
