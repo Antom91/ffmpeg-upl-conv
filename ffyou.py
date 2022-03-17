@@ -26,8 +26,8 @@ def download(file_input, file_output):
     os.system('aria2c -k 1M -s 128 -x 128 -o "..{output}" "{url}"'.format(url=file_video_link, output=file_input))
 
 def main():
-    PLAYLIST = PLAYLIST.split(',')
-    for i in PLAYLIST:
+    PL = PLAYLIST.split(',')
+    for i in PL:
         video_title = run('youtube-dl --skip-download --get-title --no-warnings {youtube}{yt_video_path}'.format(yt_video_path=i, youtube=YOUTUBE_URL), stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True).stdout.strip()
         file_video_link = run('youtube-dl -f {video_link_quality} -g {youtube}{yt_video_path}'.format(video_link_quality=VIDEO_LINK_QUALITY, yt_video_path=i, youtube=YOUTUBE_URL), stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True).stdout
 
