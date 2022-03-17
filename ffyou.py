@@ -40,9 +40,9 @@ def main():
         # cmd = os.system('youtube-upload --file="{file_output}" --title="{video_title}" --description="{video_title}" --category="22" --privacyStatus="private"'.format(file_output=file_input, video_title=video_title))
 
         # os.system('rm -rf {} {}'.format(file_input,file_output))
-        exit_code = os.WEXITSTATUS(cmd)
-        if int(exit_code) != 0:
-            exit(1)
+        # exit_code = os.WEXITSTATUS(cmd)
+        # if int(exit_code) != 0:
+        #     exit(1)
 
 def get_playlist(YOUTUBE_PLAYLIST):
     videos_list = run('youtube-dl --get-id https://www.youtube.com/playlist?list={} -i'.format(YOUTUBE_PLAYLIST), stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True).stdout.strip().split('\n')
