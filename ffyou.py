@@ -21,10 +21,6 @@ print(PLAYLIST)
 print("===============================================")
 print("===============================================")
 
-@retry
-def download(file_input, file_output):
-    os.system('aria2c -k 1M -s 128 -x 128 -o "..{output}" "{url}"'.format(url=file_video_link, output=file_input))
-
 def main():
     PL = PLAYLIST.split(',')
     for i in PL:
@@ -35,7 +31,7 @@ def main():
         file_output = os.path.join(TMP_DIR, video_title+VIDEO_FILE_EXTENSION)
 
         print("Downloading video from YouTube")
-        download(file_input, file_output)
+        os.system('aria2c -k 1M -s 128 -x 128 -o "..{output}" "{url}"'.format(url=file_video_link, output=file_input))
 
         print("Converting video from YouTube")
         os.system('ffmpeg -i {file_input} -crf 15 -vf scale=1920x1080:flags=lanczos -aspect 16:9 {file_output}'.format(file_input=file_input, file_output=file_output))
