@@ -34,7 +34,7 @@ def main():
         os.system('aria2c -k 1M -s 128 -x 128 -o "..{output}" "{url}"'.format(url=file_video_link, output=file_input))
 
         print("Converting video from YouTube")
-        os.system('ffmpeg -i {file_input} -crf 15 -vf scale=1920x1080:flags=lanczos -aspect 16:9 {file_output}'.format(file_input=file_input, file_output=file_output))
+        os.system('ffmpeg -i "{file_input}" -crf 15 -vf scale=1920x1080:flags=lanczos -aspect 16:9 "{file_output}"'.format(file_input=file_input, file_output=file_output))
 
         os.system('rm -rf {}'.format(file_input))
         # print("Uploading to YouTube")
